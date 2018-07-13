@@ -5,9 +5,7 @@ import Data.UnitsOfMeasure (u)
 import Flight.Zone (Altitude(..))
 
 data StrictZone a where
-    Line :: Eq a => Altitude a [u| m |] -> StrictZone a
-
-deriving instance Eq (StrictZone a)
+    Line :: Altitude a [u| m |] -> StrictZone a
 
 --     /.../task/library/Flight/Task.hs:33:19: error:
 --         • Overlapping instances for Show (Altitude a u0)
