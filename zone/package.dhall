@@ -19,7 +19,6 @@ in    defs
           # [ "uom-plugin"
             , "bifunctors"
             , "siggy-chardust"
-            , "flight-units"
             ]
       , library =
           { source-dirs =

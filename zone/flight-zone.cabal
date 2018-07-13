@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a9cd39b5f4aef01f7d72f7107f7ac32ff1661b58f6a4c6b09d206930c8615d76
+-- hash: 182ff83d7c5a70ebb10e379f7fc9778afb2f8995b67b5556ff6e0fc3203017ce
 
 name:           flight-zone
 version:        0.1.0
@@ -32,6 +32,7 @@ library
   exposed-modules:
       Flight.Zone
   other-modules:
+      Flight.Units
       Paths_flight_zone
   hs-source-dirs:
       library
@@ -40,7 +41,6 @@ library
   build-depends:
       base >=4.9.1.0
     , bifunctors
-    , flight-units
     , siggy-chardust
     , uom-plugin
   default-language: Haskell2010
