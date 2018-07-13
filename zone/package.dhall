@@ -17,8 +17,6 @@ in    defs
       , dependencies =
             defs.dependencies
           # [ "uom-plugin"
-            , "bifunctors"
-            , "siggy-chardust"
             ]
       , library =
           { source-dirs =

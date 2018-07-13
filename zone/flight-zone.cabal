@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 182ff83d7c5a70ebb10e379f7fc9778afb2f8995b67b5556ff6e0fc3203017ce
+-- hash: 23ed8b00fd12f48d125ef8995539f29e321ea8d03ea1eb31e55bffe24c395dbe
 
 name:           flight-zone
 version:        0.1.0
@@ -40,7 +40,5 @@ library
   ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
   build-depends:
       base >=4.9.1.0
-    , bifunctors
-    , siggy-chardust
     , uom-plugin
   default-language: Haskell2010
