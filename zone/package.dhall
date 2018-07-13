@@ -17,6 +17,9 @@ in    defs
       , dependencies =
             defs.dependencies
           # [ "uom-plugin"
+            , "bifunctors"
+            , "siggy-chardust"
+            , "flight-latlng"
             , "flight-units"
             ]
       , library =

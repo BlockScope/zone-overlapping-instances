@@ -2,6 +2,7 @@ resolver: lts-11.17
 tested-with: GHC == 8.2.2
 flags: {}
 packages:
+- latlng
 - task
 - units
 - zone
@@ -12,4 +13,6 @@ extra-deps:
 - dhall-1.12.0
 - hpack-dhall-0.1.0
 - hpack-0.25.0
+- siggy-chardust-1.0.0
+- detour-via-sci-1.0.0
 local-bin-path: __shake-build

@@ -16,13 +16,22 @@ in    defs
           [ "-Wall", "-fplugin Data.UnitsOfMeasure.Plugin" ]
       , dependencies =
             defs.dependencies
-          # [ "uom-plugin"
+          # [ "numbers"
+            , "fixed"
+            , "bifunctors"
+            , "text"
+            , "formatting"
+            , "uom-plugin"
+            , "siggy-chardust"
             ]
+
       , library =
           { source-dirs =
               "library"
           , exposed-modules =
               [ "Flight.Units"
+              , "Flight.Units.Angle"
+              , "Flight.Units.DegMinSec"
               ]
           }
       }

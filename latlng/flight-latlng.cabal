@@ -2,12 +2,12 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5ef8817348f9c5b3cb0fb236ace5a9b3d1921b7d70351171da71f00453546a61
+-- hash: 799854ad3d33f573bfb73f08d9329a9dcc9bb040487f440cec568d22b90cda32
 
-name:           flight-units
+name:           flight-latlng
 version:        0.1.0
-synopsis:       Units used in hang gliding and paragliding competitions.
-description:    Unit definitions such as m, km, rad and deg.
+synopsis:       Latitude and longitude as used in hang gliding and paragliding competitions.
+description:    Latitude and longitude.
 category:       Flight
 homepage:       https://github.com/blockscope/zone-overlapping-instances#readme
 bug-reports:    https://github.com/blockscope/zone-overlapping-instances/issues
@@ -26,26 +26,39 @@ extra-source-files:
 source-repository head
   type: git
   location: https://github.com/blockscope/zone-overlapping-instances
-  subdir: units
+  subdir: latlng
 
 library
   exposed-modules:
-      Flight.Units
-      Flight.Units.Angle
-      Flight.Units.DegMinSec
+      Flight.Field
+      Flight.EastNorth
+      Flight.LatLng
+      Flight.LatLng.Raw
+      Flight.LatLng.Double
+      Flight.LatLng.Float
+      Flight.LatLng.Rational
+      Flight.Distance
   other-modules:
-      Paths_flight_units
+      Paths_flight_latlng
   hs-source-dirs:
       library
   default-extensions: DataKinds DeriveFunctor DeriveGeneric DeriveAnyClass DerivingStrategies DisambiguateRecordFields FlexibleContexts FlexibleInstances GeneralizedNewtypeDeriving GADTs LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns OverloadedStrings PackageImports ParallelListComp PartialTypeSignatures PatternSynonyms QuasiQuotes RankNTypes RecordWildCards ScopedTypeVariables StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances TupleSections UndecidableInstances
   ghc-options: -Wall -fplugin Data.UnitsOfMeasure.Plugin
   build-depends:
-      base >=4.9.1.0
+      aeson
+    , base >=4.9.1.0
     , bifunctors
-    , fixed
+    , bytestring
+    , cassava
+    , detour-via-sci
+    , flight-units
     , formatting
+    , newtype
     , numbers
+    , random
     , siggy-chardust
+    , smallcheck
+    , tasty-quickcheck
     , text
     , uom-plugin
   default-language: Haskell2010
