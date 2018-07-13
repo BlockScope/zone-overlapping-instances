@@ -4,15 +4,14 @@ import Data.UnitsOfMeasure (u)
 
 import Flight.Zone (Altitude(..))
 
-data Goal deriving AnyZone
-class AnyZone a where
+data Goal
 
 data Zone k a where
     Line :: Eq a => Altitude a [u| m |] -> Zone Goal a
 
 deriving instance Eq (Zone k a)
 
---     /.../task/library/Flight/Task.hs:39:5: error:
+--     /.../task/library/Flight/Task.hs:38:5: error:
 --         • Overlapping instances for Show (Altitude a u0)
 --           Matching givens (or their superclasses):
 --             Show (Altitude a u)
@@ -34,6 +33,6 @@ deriving instance Eq (Zone k a)
 --               Show (Radius a (Data.UnitsOfMeasure.Internal.MkUnit "m"))) =>
 --              Show (Zone k a)’
 --        |
---     39 |     ( Show (Altitude a u)
+--     38 |     ( Show (Altitude a u)
 --        |     ^^^^^^^^^^^^^^^^^^^^^...             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 deriving instance Show (Altitude a u) => Show (Zone k a)
