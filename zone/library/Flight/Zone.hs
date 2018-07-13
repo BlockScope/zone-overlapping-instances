@@ -5,7 +5,6 @@ import Data.UnitsOfMeasure.Internal (Quantity(..))
 import Data.UnitsOfMeasure.Convert (Convertible)
 
 import Flight.Units (showRadian)
-import Flight.Distance (TaskDistance(..))
 
 newtype Altitude a u = Altitude (Quantity a u) deriving (Eq, Ord)
  

@@ -2,7 +2,6 @@ resolver: lts-11.17
 tested-with: GHC == 8.2.2
 flags: {}
 packages:
-- latlng
 - task
 - units
 - zone
