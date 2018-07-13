@@ -1,22 +1,18 @@
 module Flight.Task where
 
-import Data.UnitsOfMeasure (u, zero)
+import Data.UnitsOfMeasure (u)
 
-import Flight.Zone (Altitude(..), Radius(..))
+import Flight.Zone (Altitude(..))
 
 data Goal deriving AnyZone
 class AnyZone a where
 
 data Zone k a where
-    Line
-        :: Eq a
-        => Altitude a [u| m |]
-        -> Radius a [u| m |]
-        -> Zone Goal a
+    Line :: Eq a => Altitude a [u| m |] -> Zone Goal a
 
 deriving instance Eq (Zone k a)
 
---     /.../task/library/Flight/Task.hs:44:5: error:
+--     /.../task/library/Flight/Task.hs:39:5: error:
 --         • Overlapping instances for Show (Altitude a u0)
 --           Matching givens (or their superclasses):
 --             Show (Altitude a u)
@@ -38,10 +34,6 @@ deriving instance Eq (Zone k a)
 --               Show (Radius a (Data.UnitsOfMeasure.Internal.MkUnit "m"))) =>
 --              Show (Zone k a)’
 --        |
---     44 |     ( Show (Altitude a u)
+--     39 |     ( Show (Altitude a u)
 --        |     ^^^^^^^^^^^^^^^^^^^^^...             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-deriving instance
-    ( Show (Altitude a u)
-    , Show (Radius a [u| m |])
-    )
-    => Show (Zone k a)
+deriving instance Show (Altitude a u) => Show (Zone k a)
